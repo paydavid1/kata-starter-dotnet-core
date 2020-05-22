@@ -9,7 +9,7 @@ namespace Kata.Spec
             if (string.IsNullOrEmpty(n))
                 return 0;
 
-            var arrayNumber = n.Split(",").Select(int.Parse);
+            var arrayNumber = n.Split(new[] {',','\n'}) .Select(int.Parse);
 
             return arrayNumber.Sum();
         }
