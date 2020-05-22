@@ -13,9 +13,29 @@ namespace Kata.Spec
             var arrayNumber = n.Split(new[] {',','\n'}) .Select(int.Parse);
 
             var negatives = arrayNumber.Where(x => x < 0);
+
+            string message = "";
+            int cont = 0;
+
+            foreach (int negative in negatives)
+            {
+                cont++;
+                if (negatives.Count() == cont)
+                {
+                    message = message + negative.ToString();
+                }
+                else
+                {
+                    message = message + negative.ToString() + ", ";
+                }
+
+                
+
+            }
+            
             if (negatives.Any())
             {
-                throw new Exception($"negatives not allowed: {negatives.First()}");
+                throw new Exception($"negatives not allowed: {message}");
             }
             return arrayNumber.Sum();
         }
