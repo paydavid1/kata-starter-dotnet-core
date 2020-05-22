@@ -16,7 +16,7 @@ namespace Kata.Spec
         It should_have_the_food_in_its_belly = () =>
             _systemUnderTest.Belly.Should().Contain("banana");
     }
-    
+    //test github repo
     // Given the user input is empty when calculating the sum then it should return zero.
     // Given the user input is one number when calculating the sum then it should return the same number. (example "3" should equal 3)
     // Given the user input is two numbers when calculating the sum then it should return the sum of those numbers. (example "1,2" should equal 3)
