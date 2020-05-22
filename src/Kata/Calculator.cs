@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 
 namespace Kata.Spec
@@ -11,6 +12,11 @@ namespace Kata.Spec
 
             var arrayNumber = n.Split(new[] {',','\n'}) .Select(int.Parse);
 
+            var negatives = arrayNumber.Where(x => x < 0);
+            if (negatives.Any())
+            {
+                throw new Exception($"negatives not allowed: {negatives.First()}");
+            }
             return arrayNumber.Sum();
         }
     }
